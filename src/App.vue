@@ -1,7 +1,14 @@
 <template>
 	<div id="app">
-		<CitacoesExercicios />
-		<SobreExercicios />
+		<span>
+			<button @click="componente = 'CitacoesExercicios'"> Citações </button>
+			<button @click="componente = 'SobreExercicio'"> Sobre</button> 
+		</span>
+		<!-- Keep-alive mantem o componente vivo da onde parou, ele não destroi o componente.-->
+		<keep-alive>
+			<!-- Alternando entre multiplos componentes, ele resolve o nome da váriavel o is -->
+			<component :is="componente"/>
+		</keep-alive>
 	</div>
 </template>
 
@@ -11,7 +18,12 @@ import SobreExercicio from './components/SobreExercicio'
 
 export default {
 	/* eslint-disable */
-	components: { CitacoesExercicios, SobreExercicio }
+	components: { CitacoesExercicios, SobreExercicio },
+	data(){
+		return {
+			componente: 'CitacoesExercicios'
+		}
+	},
 }
 </script>
 

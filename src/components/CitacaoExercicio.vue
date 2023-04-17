@@ -16,6 +16,21 @@
 <script>
 
 export default {
+    // Created e destroyed, eles criam e destroiem o componente, porém só aparece se não estiver com keep-alive.
+	created(){
+		console.log('created')
+	},
+	destroyed(){
+		console.log('destroyed')
+	},
+	// Activated e deactivated, eles ativam e desativam o componente, porém só aparece se estiver com o keep-alive.
+	activated(){
+		console.log('activated')
+	},
+	deactivated(){
+		console.log('deactivated')
+
+	}
 
 }
 </script>

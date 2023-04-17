@@ -19,7 +19,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid #DDD;
+        border: 1px solid #000000;
         height: 200px;
         width: 200px;
         border-radius: 100px;
