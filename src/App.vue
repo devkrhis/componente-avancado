@@ -1,14 +1,16 @@
 <template>
 	<div id="app">
 		<span>
-			<button @click="componente = 'CitacoesExercicios'"> Citações </button>
-			<button @click="componente = 'SobreExercicio'"> Sobre</button> 
+			<button @click="componente = 'CitacoesExercicios' ">Citações</button>
+			<button @click="componente = 'SobreExercicio' ">Sobre</button>
 		</span>
-		<!-- Keep-alive mantem o componente vivo da onde parou, ele não destroi o componente.-->
 		<keep-alive>
-			<!-- Alternando entre multiplos componentes, ele resolve o nome da váriavel o is -->
-			<component :is="componente"/>
-		</keep-alive>
+			<component :is="componente"/> <!-- Dessa forma ele resolve o nome da variavel exemplo:
+			componente está recebendo ali em baixo CitacoesExercicios, ai quando eu clico no botão
+			que eu defini ali em cima ele troca, de CitacoesExercicios para SobreExercicio-->
+		</keep-alive> <!-- Ele mantem o estado do componente vivo, sendo assim quando eu troco
+		de citações, para sobre ele volta a onde eu deixei, ele não reinicia o componente.-->
+
 	</div>
 </template>
 

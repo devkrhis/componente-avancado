@@ -4,18 +4,12 @@
             <button @click="numero--">&lt;</button>
             <button @click="numero++">&gt;</button>
         </span>
-        <!-- dá para fazer slot dessa forma
-            <CitacaoExercicio>
-                <h1> {{ citacoes[indice].fonte }}</h1>
-                <p> {{ citacoes[indice].texto }}</p>
-                <h6> {{ citacoes[indice].autor }}</h6>
-            </CitacaoExercicio>
-        -->
-        <!-- Usando multiplos slots -->
         <CitacaoExercicio>
-            <h1 slot="fonte"> {{ citacoes[indice].fonte }}</h1>
             <p slot="texto"> {{ citacoes[indice].texto }}</p>
-            <h6 slot="autor"> {{ citacoes[indice].autor }}</h6>
+            <p slot="autor"> {{ citacoes[indice].autor }}</p>
+            <p slot="fonte"> {{ citacoes[indice].fonte }}</p>
+            <p slot="dev"> {{ citacoes[indice].dev }}</p>
+
         </CitacaoExercicio>
     </div>
 </template>
@@ -30,15 +24,18 @@ export default {
             citacoes: [{
                 fonte: 'Jornal do Empreendedor',
                 texto: 'Lembre-se sempre que você é absolutamente único. Assim como todos os outros.',
-                autor: 'Margaret Mead'
+                autor: 'Margaret Mead',
+                dev: 'Krhistopher'
             }, { 
                 fonte: 'Frases de Mãe',
                 texto: 'Isso não é um quarto, é um chiqueiro.',
-                autor: 'Roberta'
+                autor: 'Roberta',
+                dev: 'Krhistopher'
             }, {
                 fonte: 'Frases de Pai',
                 texto: 'Vou contar até 3! 1, 2, 2...',
-                autor: 'Gustavo'
+                autor: 'Gustavo',
+                dev: 'Krhistopher'
             }]
         }
     },
@@ -55,5 +52,11 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .limitText p{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 </style>
